@@ -6,8 +6,7 @@
   </head>
   <body>
     <script>
-
-      $(document).ready(function(){
+  $(document).ready(function(){
         var $body = $('body');
         $body.html('');
 
@@ -15,7 +14,7 @@
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + '-' + new Date());
           $tweet.appendTo($body);
           index -= 1;
         }
