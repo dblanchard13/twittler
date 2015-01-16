@@ -33,7 +33,7 @@
         
         var count = streams.home.length - 1;
 
-        $('button').on('click', function(){
+        $('#moreTweets').on('click', function(){
           var newCount = streams.home.length - 1;
           if(newCount>count){
             for(var i=count; i<=newCount; i++) {
@@ -58,12 +58,18 @@
 
       }); 
     </script>
-
-    <h1 align='center'>Fuck Off, Twittle Dumbass</h1>
-    <button>WANT MORE SNIPPETS OF OUR USERS' LIVES?</button>
-
-    <div id="allTweets">
+    <div id="tweetHolder">
+      <h3 id="feedHeader">TWITTLE FEED</h3>
+      <div id="allTweets">
+      </div>
     </div>
+    
+    <h1 id="title">Fuck Off,<br/> Twittle-De-Dumbass</h1>
+    <div id="moreTweets"><span>GET MORE <b>TWITTLES!</b></span></div>
+    
+    
+
+    
 
   </body>
 </html>

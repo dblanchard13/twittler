@@ -1,15 +1,25 @@
 #singleTweet {
   text-align: center;
-  color: #ffff00;
+  
+
 }
 
 #message {
-  
+  color: black;
+}
+
+#time {
+  color: #cc99ff;
+  text-align: right;
 }
 
 body {
   padding 25px;
-  background-color: #cc99ff;
+  
+  font-family: Arial;
+  background-image: url('http://images.clipartpanda.com/blue-clouds-background-blue-cloud-background-blue2-19029417-1920-9861.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a:link {
@@ -17,5 +27,62 @@ a:link {
 }
 
 a:visited {
-  color: #00ff00;
+  color: #660066
 }
+
+#user {
+  text-align: left;
+
+}
+
+#tweetHolder {
+  background-color: #f5f5f5;
+  width: 350px;
+  margin-left:400px;
+  border: 13px solid #ffff00;
+}
+
+
+#moreTweets {
+  position: fixed;
+  top:60px;
+  left:25%;
+  margin-left:-254px;
+  border-radius: 5px;
+  border: 5px solid white;
+  background-color: #ffff00;
+  height: 25px;
+  width: 250px;
+  text-align: center
+  
+}
+span { 
+  font-size: 20px;
+}
+
+#feedHeader {
+  text-align: center;
+  color: black;
+  border: 5px solid #ffff00;
+  border-radius: 5px;
+  background-color: #ffff00;
+} 
+
+#title {
+  position: fixed;
+  top: -10px;
+  background-color: #ffff00;
+  text-align: right;
+  left:70%;
+  border-radius: 10px;
+  border: 7px solid white;
+  background-color: #ffff00;
+  height: 75px;
+  width: 310px;
+  }
+
+
+
+
+
+
