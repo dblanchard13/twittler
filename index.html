@@ -35,6 +35,29 @@
           console.log(streams.users.mracus[key])
         }
       }
+      checkUser();
+
+      $('.shawndrost').on('click', function(){
+        var index = streams.users.shawndrost.length-1
+        for(var i=0; i<index; i++){
+          console.log(streams.users.shawndrost[i]);
+          var tweet = streams.users.shawndrost[i];
+              var $tweet = $(
+              "<div id='singleTweet'>" +
+                '<div id="user"><a href="#" class='+tweet.user+'>' +
+                  '@' + tweet.user +
+                '</a></div>' +
+                '<div id="message">' +
+                    tweet.message.toUpperCase() +
+                '</div>' +
+                '<div id="time">' +
+                    '-' + tweet.created_at +
+                "</div>" +
+              "</div>");
+              $tweet.prependTo('#allTweets');
+        }
+        console.log('hideTwit run')
+      });
 
         
         var count = streams.home.length - 1;
@@ -60,9 +83,10 @@
             }
             return count = streams.home.length - 1;
           }
+
         });
 
-        checkUser();
+        
 
       }); 
     </script>
