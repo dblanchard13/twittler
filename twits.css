@@ -1,16 +1,15 @@
-#singleTweet {
-  text-align: center;
-  
 
-}
 
 #message {
   color: black;
+  padding: 3px;
+  font-size: 25px;
 }
 
 #time {
   color: #cc99ff;
   text-align: right;
+  padding: 2px;
 }
 
 body {
@@ -32,14 +31,24 @@ a:visited {
 
 #user {
   text-align: left;
+  padding: 3px;
+
+}
+
+#singleTweet {
+  background-color: #f5f5f5;
+  border: 6px solid #ffff00;
+  padding: 7px;
+  text-align: center;
 
 }
 
 #tweetHolder {
   background-color: #f5f5f5;
   width: 350px;
-  margin-left:400px;
   border: 13px solid #ffff00;
+  margin-left: auto ;
+  margin-right: auto ;
 }
 
 
@@ -62,10 +71,16 @@ span {
 
 #feedHeader {
   text-align: center;
-  color: black;
-  border: 5px solid #ffff00;
-  border-radius: 5px;
-  background-color: #ffff00;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #0099ff;
+  font-family: impact;
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin: 0px;
+  
+ 
 } 
 
 #title {
@@ -79,6 +94,8 @@ span {
   background-color: #ffff00;
   height: 75px;
   width: 310px;
+  padding: 5px;
+  padding-right: 10px;
   }
 
 

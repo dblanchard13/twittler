@@ -20,15 +20,21 @@
                   '@' + tweet.user +
                 '</a></div>' +
                 '<div id="message">' +
-                    tweet.message +
+                    tweet.message.toUpperCase() +
                 '</div>' +
                 '<div id="time">' +
-                   '-' + jQuery.timeago(tweet.created_at) +
+                   '-' + tweet.created_at +
                 "</div>" +
               "</div>");
-          $tweet.appendTo('#allTweets');
+          $tweet.prependTo('#allTweets');
           index -= 1;
         }
+
+      var checkUser = function(){
+        for (var key in streams.users.mracus){
+          console.log(streams.users.mracus[key])
+        }
+      }
 
         
         var count = streams.home.length - 1;
@@ -44,10 +50,10 @@
                   '@' + tweet.user +
                 '</a></div>' +
                 '<div id="message">' +
-                    tweet.message +
+                    tweet.message.toUpperCase() +
                 '</div>' +
                 '<div id="time">' +
-                    '-' + jQuery.timeago(tweet.created_at) +
+                    '-' + tweet.created_at +
                 "</div>" +
               "</div>");
               $tweet.prependTo('#allTweets');
@@ -56,17 +62,20 @@
           }
         });
 
+        checkUser();
+
       }); 
     </script>
+    
+    
+    <h1 id="title">Fuck Off,<br/> Twittle-De-Dumbass</h1>
+    <div id="moreTweets"><span>GET MORE <b>TWITTLES!</b></span></div>
+    
     <div id="tweetHolder">
       <h3 id="feedHeader">TWITTLE FEED</h3>
       <div id="allTweets">
       </div>
     </div>
-    
-    <h1 id="title">Fuck Off,<br/> Twittle-De-Dumbass</h1>
-    <div id="moreTweets"><span>GET MORE <b>TWITTLES!</b></span></div>
-    
     
 
     
