@@ -25,12 +25,10 @@
         var count = streams.home.length - 1;
 
         $('button').on('click', function(){
-          console.log('Fuck')
           var newCount = streams.home.length - 1;
-          $('<div>CUNT -'+ new Date() +'</div>').prependTo('#dickSauce');
           if(newCount>count){
             var numTweetsToAdd = newCount-count;
-            for(var i=newCount; i>count; i--) {
+            for(var i=count; i<=newCount; i++) {
               var tweet = streams.home[i];
               var $tweet = $("<div id='dickSauce' align='right'></div>");
               $tweet.text('@' + tweet.user + ': ' + tweet.message + ' -' + tweet.created_at);
@@ -46,7 +44,8 @@
     </script>
 
     <h1 align='center'>Fuck Off, Twittle Dumbass</h1>
-    <button>MORE TWEETS</button>
+    <button>WANT MORE SNIPPETS OF OUR USERS' LIVES?</button>
+    <h2><a href='streams.users.mracus'>mracus</a></h2>
 
   </body>
 </html>
