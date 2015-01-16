@@ -3,21 +3,30 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="jQuery.timeago.js"></script>
+    <link rel="stylesheet" type="text/css" href="twits.css">
   </head>
   <body>
     <script>
   $(document).ready(function(){
-        var $body = $('body');
-        
-        
-        
+
         var index = streams.home.length - 1;
         
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $("<div id='dickSauce' align='right'></div>");
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' -' + tweet.created_at);
-          $tweet.appendTo($body);
+          var $tweet = $(
+              "<div id='singleTweet'>" +
+                '<div id="user"><a href="#" class='+tweet.user+'>' +
+                  '@' + tweet.user +
+                '</a></div>' +
+                '<div id="message">' +
+                    tweet.message +
+                '</div>' +
+                '<div id="time">' +
+                   '-' + jQuery.timeago(tweet.created_at) +
+                "</div>" +
+              "</div>");
+          $tweet.appendTo('#allTweets');
           index -= 1;
         }
 
@@ -27,25 +36,34 @@
         $('button').on('click', function(){
           var newCount = streams.home.length - 1;
           if(newCount>count){
-            var numTweetsToAdd = newCount-count;
             for(var i=count; i<=newCount; i++) {
               var tweet = streams.home[i];
-              var $tweet = $("<div id='dickSauce' align='right'></div>");
-              $tweet.text('@' + tweet.user + ': ' + tweet.message + ' -' + tweet.created_at);
-              $tweet.prependTo('#dickSauce');
+              var $tweet = $(
+              "<div id='singleTweet'>" +
+                '<div id="user"><a href="#" class='+tweet.user+'>' +
+                  '@' + tweet.user +
+                '</a></div>' +
+                '<div id="message">' +
+                    tweet.message +
+                '</div>' +
+                '<div id="time">' +
+                    '-' + jQuery.timeago(tweet.created_at) +
+                "</div>" +
+              "</div>");
+              $tweet.prependTo('#allTweets');
             }
             return count = streams.home.length - 1;
           }
+        });
 
-
-        });  
-      });
-        
+      }); 
     </script>
 
     <h1 align='center'>Fuck Off, Twittle Dumbass</h1>
     <button>WANT MORE SNIPPETS OF OUR USERS' LIVES?</button>
-    <h2><a href='streams.users.mracus'>mracus</a></h2>
+
+    <div id="allTweets">
+    </div>
 
   </body>
 </html>

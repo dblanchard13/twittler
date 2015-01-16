@@ -1,0 +1,21 @@
+#singleTweet {
+  text-align: center;
+  color: #ffff00;
+}
+
+#message {
+  
+}
+
+body {
+  padding 25px;
+  background-color: #cc99ff;
+}
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: #00ff00;
+}
