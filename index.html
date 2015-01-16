@@ -8,19 +8,45 @@
     <script>
   $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
-
+        
+        
+        
         var index = streams.home.length - 1;
+        
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + '-' + new Date());
+          var $tweet = $("<div id='dickSauce' align='right'></div>");
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' -' + tweet.created_at);
           $tweet.appendTo($body);
           index -= 1;
         }
 
-      });
+        
+        var count = streams.home.length - 1;
 
+        $('button').on('click', function(){
+          console.log('Fuck')
+          var newCount = streams.home.length - 1;
+          $('<div>CUNT -'+ new Date() +'</div>').prependTo('#dickSauce');
+          if(newCount>count){
+            var numTweetsToAdd = newCount-count;
+            for(var i=newCount; i>count; i--) {
+              var tweet = streams.home[i];
+              var $tweet = $("<div id='dickSauce' align='right'></div>");
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + ' -' + tweet.created_at);
+              $tweet.prependTo('#dickSauce');
+            }
+            return count = streams.home.length - 1;
+          }
+
+
+        });  
+      });
+        
     </script>
+
+    <h1 align='center'>Fuck Off, Twittle Dumbass</h1>
+    <button>MORE TWEETS</button>
+
   </body>
 </html>
