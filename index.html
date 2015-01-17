@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="twits.css">
   </head>
   <body>
+    
+
     <script>
   $(document).ready(function(){
 
@@ -15,8 +17,8 @@
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $(
-              "<div id='singleTweet'>" +
-                '<div id="user"><a href="#" class='+tweet.user+'>' +
+              "<div id='singleTweet' class='singleTweet'>" +
+                '<div id="user" class="user"><a href="#" class='+tweet.user +'>' +
                   '@' + tweet.user +
                 '</a></div>' +
                 '<div id="message">' +
@@ -26,7 +28,7 @@
                    '-' + tweet.created_at +
                 "</div>" +
               "</div>");
-          $tweet.prependTo('#allTweets');
+          $tweet.hide().appendTo('#allTweets').fadeIn('fast');
           index -= 1;
         }
 
@@ -37,39 +39,20 @@
       }
       checkUser();
 
-      $('.shawndrost').on('click', function(){
-        var index = streams.users.shawndrost.length-1
-        for(var i=0; i<index; i++){
-          console.log(streams.users.shawndrost[i]);
-          var tweet = streams.users.shawndrost[i];
-              var $tweet = $(
-              "<div id='singleTweet'>" +
-                '<div id="user"><a href="#" class='+tweet.user+'>' +
-                  '@' + tweet.user +
-                '</a></div>' +
-                '<div id="message">' +
-                    tweet.message.toUpperCase() +
-                '</div>' +
-                '<div id="time">' +
-                    '-' + tweet.created_at +
-                "</div>" +
-              "</div>");
-              $tweet.prependTo('#allTweets');
-        }
-        console.log('hideTwit run')
-      });
+      
 
         
         var count = streams.home.length - 1;
 
-        $('#moreTweets').on('click', function(){
-          var newCount = streams.home.length - 1;
-          if(newCount>count){
-            for(var i=count; i<=newCount; i++) {
-              var tweet = streams.home[i];
+     $('#moreTweets').on('click', function(d){
+          d.preventDefault()
+          $('.singleTweet').remove();
+          var index = streams.home.length - 1;
+            while(index >= 0){
+              var tweet = streams.home[index];
               var $tweet = $(
-              "<div id='singleTweet'>" +
-                '<div id="user"><a href="#" class='+tweet.user+'>' +
+              "<div id='singleTweet' class='singleTweet'>" +
+                '<div id="user" class="user"><a href="#" class='+tweet.user+'>' +
                   '@' + tweet.user +
                 '</a></div>' +
                 '<div id="message">' +
@@ -79,14 +62,36 @@
                     '-' + tweet.created_at +
                 "</div>" +
               "</div>");
-              $tweet.prependTo('#allTweets');
+              $tweet.hide().appendTo('#allTweets').fadeIn('fast');
+              index -= 1;
             }
-            return count = streams.home.length - 1;
-          }
-
         });
 
-        
+     
+        $('#allTweets').on('click', 'a', function(d){
+          d.preventDefault();
+          $('.singleTweet').remove();
+          var user = this.getAttribute('class');
+          var index = streams.users[user].length-1
+          while(index >= 0){
+              var tweet = streams.users[user][index];
+              var $tweet = $(
+              "<div id='singleTweet' class='singleTweet'>" +
+                '<div id="user" class="user"><a href="#" class='+tweet.user+'>' +
+                  '@' + tweet.user +
+                '</a></div>' +
+                '<div id="message">' +
+                    tweet.message.toUpperCase() +
+                '</div>' +
+                '<div id="time">' +
+                    '-' + tweet.created_at +
+                "</div>" +
+              "</div>");
+              $tweet.hide().appendTo('#allTweets').fadeIn('fast');
+              index -= 1;
+            }
+        });
+
 
       }); 
     </script>
