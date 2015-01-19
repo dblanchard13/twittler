@@ -49,10 +49,10 @@
      $('#moreTweets').on('click', function(d){
           d.preventDefault()
           $('.singleTweet').remove();
-          $('.feedOwner p').remove();
-          $feedOwns = $("<p>Viewing all the feeds again!</p>")
+          $('#feedHeader p').remove();
+          $feedOwns = $("<p>TWITTLE FEED</p>")
           twittle();
-          $feedOwns.hide().appendTo('.feedOwner').fadeIn('fast');
+          $feedOwns.hide().appendTo('#feedHeader').fadeIn('fast');
         });
 
      
@@ -60,10 +60,10 @@
           d.preventDefault();
           $('.singleTweet').remove();
           var user = this.getAttribute('class');
-          $('.feedOwner p').remove();
-          $feedOwns = $("<p>You're now checkin out the feed of @"+user+', yo</p>')
+          $('#feedHeader p').remove();
+          $feedOwns = $("<p>TWITTLE FEED OF<br/> @"+user+', yo</p>')
           twittle(user);
-          $feedOwns.hide().appendTo('.feedOwner').fadeIn('fast');
+          $feedOwns.hide().appendTo('#feedHeader').fadeIn('fast');
         });
 
       }); 
@@ -72,10 +72,10 @@
     
     <h1 id="title">Welcome<br/>to <b>TWITTLER</b></h1>
     <button><div id="moreTweets"><span>GET MORE <b>TWITTLES!</b></span></div></button>
-    <div class="feedOwner"><p>Viewing all the feeds!</p></div>
+   
     
     <div id="tweetHolder">
-      <h3 id="feedHeader">TWITTLE FEED</h3>
+      <h3 id="feedHeader"><p>TWITTLE FEED</p></h3>
       <div id="allTweets">
       </div>
     </div>
